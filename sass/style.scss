@@ -1,7 +1,8 @@
 @charset "UTF-8";
 
 @import "compass";
-@import "compass/reset";
-
-@import "variables";
-@import "main";
+@import "_normalize";
+@import "_variables";
+@import "_mixin";
+@import "_common";
+@import "_user";

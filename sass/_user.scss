@@ -1,31 +1,6 @@
 /* ==========================================
-common
-========================================== */
-body {
-	background: $bg-color;
-	color: $text-color;
-	font-family: $base-font-family;
-	line-height: 1.7;
-}
-
-a {
-	@include link-color-lighten($accent-color);
-	text-decoration: none;
-}
-
-a:hover img {
-	@include opacity(0.8);
-}
-
-img {
-	max-width: 100%;
-	height: auto;
-}
-
-/* ==========================================
 LAYOUT
 ========================================== */
-//nav
 .container {
 	@extend %clearfix;
 	@include grid-unit(12);
@@ -49,7 +24,6 @@ LAYOUT
 	}
 }
 
-//header
 #header {
 	@extend %clearfix;
 	h1 {
@@ -59,7 +33,6 @@ LAYOUT
 	}
 }
 
-//content
 #content {
 	margin-bottom: $margin;
 	h2 {
@@ -81,7 +54,6 @@ LAYOUT
 /* ==========================================
 HOME
 ========================================== */
-//main
 .main-content {
 	@include grid-unit(8);
 	.box1 {
@@ -102,37 +74,13 @@ HOME
 	}
 }
 
-//sidebar
 .sidebar {
 	@include grid-unit(4);
 	margin-right: 0;
 }
 
-//footer
 #footer {
 	text-align: right;
 }
-
-
-// responsive
-// .container {
-// 	@extend %clearfix;
-// 	@include block-center;
-// 	width: percentage(940px / 960px);
-// 	.main-content {
-// 		width: percentage(620px / 940px);
-// 	}
-// 	.sidebar {
-// 		width: percentage(300px / 940px);
-// 	}
-// }
-
-// @media screen and (max-width: $break-small) {
-// 	width: 100px;
-// 	float: none;
-// }
-// @media screen and (min-width: $break-large) {
-// 	float: right;
-// }
 
 
