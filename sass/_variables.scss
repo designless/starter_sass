@@ -1,0 +1,185 @@
+$base-color: #eee;
+$text-color: #666;
+$main-color: #09a6ce;
+$bg-color: #fafafa;
+$accent-color: #f67288;
+$base-font-size: 24px;
+$base-font-family: 'Helvetica Neue', Verdana, Arial, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+$margin: 30px;
+$space: 20px;
+
+//placeholders
+%clearfix {
+	&:before, &:after {
+		display: table;
+		content: "";
+	}
+	&:after {
+		clear: both;
+	}
+	& {
+		zoom: 1;
+	}
+}
+
+%hidden-text {
+	text-indent: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+//link
+@mixin link-color-lighten($color) {
+	&:link, &:visited {
+		color: $color;
+	}
+	&:hover, &:active, &:focus {
+		color: lighten($color, 10%);
+	}
+}
+
+@mixin link-color-darken($color) {
+	&:link, &:visited {
+		color: $color;
+	}
+	&:hover, &:active, &:focus {
+		color: darken($color, 10%);
+	}
+}
+
+//gradient
+@mixin gradient-top-lighten($color:#E8E8E8, $lighten:7%){
+	background-color: $color;
+	@include background-image(linear-gradient(lighten($color, $lighten) 0%, $color 100%));
+	// for IE8 + IE9
+	@include filter-gradient(lighten($color, $lighten), $color, vertical);
+}
+
+//text-shadow
+@mixin text-shadow-black($opacity: .15){
+  text-shadow: 0 1px 0 rgba(#000, $opacity);
+}
+
+@mixin text-shadow-white($opacity: .3){
+  text-shadow: 0 1px 0 rgba(#FFF, $opacity);
+}
+
+//position-absolute
+@mixin absolute-top-left($top: 0, $left: 0) {
+  position: absolute;
+  top: $top + px;
+  left: $left + px;
+}
+
+@mixin absolute-top-right($top: 0, $right: 0) {
+  position: absolute;
+  top: $top + px;
+  right: $right + px;
+}
+
+@mixin absolute-bottom-left($bottom: 0, $left: 0) {
+  position: absolute;
+  bottom: $bottom + px;
+  left: $left + px;
+}
+
+@mixin absolute-bottom-right($bottom: 0, $right: 0) {
+  position: absolute;
+  bottom: $bottom + px;
+  right: $right + px;
+}
+
+//grid
+$column-width: 60px;
+$gutter-width: 20px;
+@mixin grid-unit($span) {
+	float: left;
+	margin-right: $gutter-width;
+	width: $column-width * $span + $gutter-width * ($span - 1);
+}
+
+@mixin block-center {
+	margin: 0 auto;
+	float: none;
+	position: relative;
+}
+
+//background alpha
+@mixin trans-bg($color, $alpha) {
+	background: $color;
+	background-color: transparentize($color, $alpha);
+}
+
+//button
+@mixin btn-base{
+@include border-radius(3);
+@include box-sizing(border-box);
+font-weight: bold;
+text-decoration: none;
+text-align: center;
+width: 126px;
+line-height: 25px;
+}
+
+//border radius
+@mixin border-radius($radius) {
+-moz-border-radius: $radius + px;
+-webkit-border-radius: $radius + px;
+-o-border-radius: $radius + px;
+-ms-border-radius: $radius + px;
+border-radius: $radius + px;
+}
+
+//float image
+@mixin image-left {
+	float: left;
+	margin-right: $space;
+}
+
+@mixin image-right {
+	float: right;
+	margin-left: $space;
+}
+
+//animation
+$prefixes: ("-webkit-", "-moz-", null);
+@mixin keyframes($name){
+  @-webkit-keyframes $name {
+    @content;
+  }
+  @-moz-keyframes $name {
+    @content;
+  }
+  @keyframes $name {
+    @content;
+  }
+}
+@mixin animation($name, $duration, $timing, $delay, $count, $direction: null) {
+  @each $prefix in $prefixes {
+      #{$prefix}#{animation}: $name $duration $timing $delay $count $direction;
+  }
+}
+
+
+//sprite
+// $replace: sprite-map("replace/*.png", $layout:smart);
+// $replace-image: sprite-url($replace);
+// %sprite-background {
+//   background-image: $replace-image;
+// }
+// @mixin sprite-bg-dimensions($name) {
+//   @extend %sprite-background;
+//   @include sprite($replace, $name, true);
+// }
+
+//icon
+// $icon: sprite-map("icon/*.png", $spacing:50px);
+// $icon-img: sprite-url($icon);
+// @mixin sprite-icon($name, $x: 0, $y: 0) {
+//   @include sprite-background-position($icon, $name, $x, $y);
+//   padding-left: image-width(sprite-file($icon, $name)) + 4px;
+// }
+// @mixin sprite-icon-right($name) {
+//   background:inline-image("icon/#{$name}.png") no-repeat 100% 50%;
+//   padding-right: image-width(sprite-file($icon, $name)) + 4px;
+// }

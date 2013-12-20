@@ -1,0 +1,138 @@
+/* ==========================================
+common
+========================================== */
+body {
+	background: $bg-color;
+	color: $text-color;
+	font-family: $base-font-family;
+	line-height: 1.7;
+}
+
+a {
+	@include link-color-lighten($accent-color);
+	text-decoration: none;
+}
+
+a:hover img {
+	@include opacity(0.8);
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+/* ==========================================
+LAYOUT
+========================================== */
+//nav
+.container {
+	@extend %clearfix;
+	@include grid-unit(12);
+	@include block-center;
+}
+
+#nav {
+	@include trans-bg(#000, 0.5);
+	padding: $space/4;
+	margin-bottom: $margin;
+	ul {
+		@extend %clearfix;
+	}
+	li {
+		margin-right: $space;
+		float: left;
+		margin-right: $margin;
+	}
+	a {
+		@include link-color-lighten($main-color);
+	}
+}
+
+//header
+#header {
+	@extend %clearfix;
+	h1 {
+		color: $main-color;
+		font-size: $base-font-size*1.5;
+		margin-bottom: $margin;
+	}
+}
+
+//content
+#content {
+	margin-bottom: $margin;
+	h2 {
+		color: $main-color;
+		margin-bottom: $space/2;
+		font-size: $base-font-size;
+	}
+	.btn-more {
+		@include link-color-darken(#fff);
+		span {
+			@include gradient-top-lighten($color:#fc0, $lighten:30%);
+			padding: 10px;
+		}
+	}
+}
+
+
+
+/* ==========================================
+HOME
+========================================== */
+//main
+.main-content {
+	@include grid-unit(8);
+	.box1 {
+		@extend %clearfix;
+		h2 {
+			color: $main-color;
+		}
+		p {
+			@include grid-unit(5);
+			margin-right: 0;
+		}
+		.profile-pic {
+			@include grid-unit(3);
+			img {
+				@include border-radius(5);
+			}
+		}
+	}
+}
+
+//sidebar
+.sidebar {
+	@include grid-unit(4);
+	margin-right: 0;
+}
+
+//footer
+#footer {
+	text-align: right;
+}
+
+
+// responsive
+// .container {
+// 	@extend %clearfix;
+// 	@include block-center;
+// 	width: percentage(940px / 960px);
+// 	.main-content {
+// 		width: percentage(620px / 940px);
+// 	}
+// 	.sidebar {
+// 		width: percentage(300px / 940px);
+// 	}
+// }
+
+// @media screen and (max-width: $break-small) {
+// 	width: 100px;
+// 	float: none;
+// }
+// @media screen and (min-width: $break-large) {
+// 	float: right;
+// }
+
+

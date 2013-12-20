@@ -1,0 +1,200 @@
+@charset "UTF-8";
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+.container:before, #nav ul:before, #header:before, .main-content .box1:before, .container:after, #nav ul:after, #header:after, .main-content .box1:after {
+  display: table;
+  content: "";
+}
+.container:after, #nav ul:after, #header:after, .main-content .box1:after {
+  clear: both;
+}
+.container, #nav ul, #header, .main-content .box1 {
+  zoom: 1;
+}
+
+/* ==========================================
+common
+========================================== */
+body {
+  background: #fafafa;
+  color: #666666;
+  font-family: "Helvetica Neue", Verdana, Arial, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  line-height: 1.7;
+}
+
+a {
+  text-decoration: none;
+}
+a:link, a:visited {
+  color: #f67288;
+}
+a:hover, a:active, a:focus {
+  color: #f9a2b0;
+}
+
+a:hover img {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ==========================================
+LAYOUT
+========================================== */
+.container {
+  float: left;
+  margin-right: 20px;
+  width: 940px;
+  margin: 0 auto;
+  float: none;
+  position: relative;
+}
+
+#nav {
+  background: black;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  margin-bottom: 30px;
+}
+#nav li {
+  margin-right: 20px;
+  float: left;
+  margin-right: 30px;
+}
+#nav a:link, #nav a:visited {
+  color: #09a6ce;
+}
+#nav a:hover, #nav a:active, #nav a:focus {
+  color: #15c7f5;
+}
+
+#header h1 {
+  color: #09a6ce;
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+#content {
+  margin-bottom: 30px;
+}
+#content h2 {
+  color: #09a6ce;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+#content .btn-more:link, #content .btn-more:visited {
+  color: white;
+}
+#content .btn-more:hover, #content .btn-more:active, #content .btn-more:focus {
+  color: #e6e6e6;
+}
+#content .btn-more span {
+  background-color: #ffcc00;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffeb99), color-stop(100%, #ffcc00));
+  background-image: -webkit-linear-gradient(#ffeb99 0%, #ffcc00 100%);
+  background-image: -moz-linear-gradient(#ffeb99 0%, #ffcc00 100%);
+  background-image: -o-linear-gradient(#ffeb99 0%, #ffcc00 100%);
+  background-image: linear-gradient(#ffeb99 0%, #ffcc00 100%);
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFFEB99', endColorstr='#FFFFCC00');
+  padding: 10px;
+}
+
+/* ==========================================
+HOME
+========================================== */
+.main-content {
+  float: left;
+  margin-right: 20px;
+  width: 620px;
+}
+.main-content .box1 h2 {
+  color: #09a6ce;
+}
+.main-content .box1 p {
+  float: left;
+  margin-right: 20px;
+  width: 380px;
+  margin-right: 0;
+}
+.main-content .box1 .profile-pic {
+  float: left;
+  margin-right: 20px;
+  width: 220px;
+}
+.main-content .box1 .profile-pic img {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.sidebar {
+  float: left;
+  margin-right: 20px;
+  width: 300px;
+  margin-right: 0;
+}
+
+#footer {
+  text-align: right;
+}
